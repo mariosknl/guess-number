@@ -1,19 +1,31 @@
 import React from "react";
 import { Button, Image, View, Text, StyleSheet } from "react-native";
 
-import DefaultStyles from "../constants/default-styles";
+import BodyText from "../components/BodyText";
+import Colors from "../constants/colors";
 
 const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.titleText}>The Game is over!</Text>
+      <BodyText style={styles.titleText}>The Game is over!</BodyText>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={require("../assets/success.png")} />
+        {/* <Image
+          fadeDuration={1000}
+          style={styles.image}
+          source={{
+            uri: "https://images.squarespace-cdn.com/content/v1/5a1f230a6957da4aa04a790c/1570638782634-CYJ241LPF853JL6ZLPD6/John_baldwin_Tier.jpg?format=1000w",
+          }}
+        /> */}
       </View>
-      <Text style={styles.bodyText}>
-        Number of rounds: {props.roundsNumber}
-      </Text>
-      <Text style={styles.bodyText}>Number was: {props.userNumber}</Text>
+      <View style={styles.resultContainer}>
+        <BodyText style={styles.resultText}>
+          Your phone needed{" "}
+          <Text style={styles.highlight}>{props.roundsNumber}</Text> rounds to
+          guess the number
+          <Text style={styles.highlight}> {props.userNumber}</Text>
+        </BodyText>
+      </View>
       <Button title="NEW GAME" onPress={props.onRestart} />
     </View>
   );
@@ -37,6 +49,18 @@ const styles = StyleSheet.create({
     borderColor: "black",
     overflow: "hidden",
     marginVertical: 30,
+  },
+  resultText: {
+    textAlign: "center",
+    fontSize: 20,
+  },
+  highlight: {
+    color: Colors.primary,
+    fontFamily: "open-sans-bold",
+  },
+  resultContainer: {
+    marginHorizontal: 30,
+    marginVertical: 15,
   },
 });
 
