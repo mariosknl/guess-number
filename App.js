@@ -15,7 +15,7 @@ export default function App() {
   let content = <StartGame onStartGame={startGameHandler} />;
 
   if (userNumber) {
-    content = <GameScreen userChoise={userNumber} />;
+    content = <GameScreen userChoice={userNumber} />;
   }
 
   return (
