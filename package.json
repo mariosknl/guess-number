@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "expo": "46.0.16",
-    "expo-app-loading": "2.1.0",
+    "expo": "46.0.17",
+    "expo-app-loading": "2.1.1",
     "expo-font": "10.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
